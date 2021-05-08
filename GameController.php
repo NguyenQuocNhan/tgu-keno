@@ -27,13 +27,24 @@ function hienThiDaySoVuaChon(&$daySo){
 }
 
 /**
+ * Hàm thêm số vào dãy số đặt cược
+ * @param int $so số cần đặt cược
+ * @param array &$daySo dãy số đặt cược
+ */
+function themSo($so, &$daySo){
+    if(!in_array($so, $daySo)){
+        $daySo[] = $so;
+    }
+}
+
+/**
  * Hàm xóa số khỏi dãy số
  * @param int $so cần xóa khỏi dãy số
  * @param array $daySo dãy số mà người chơi chọn
  */
 function xoaSo($so, &$daySo){
     $pos = array_search($so, $daySo); // tìm vị trí của số trong dãy số
-    if($pos){
+    if($pos > -1 && gettype($pos) != 'boolean'){
         unset($daySo[$pos]); // xóa số khỏi dãy số
     }
 }
