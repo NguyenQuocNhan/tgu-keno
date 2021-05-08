@@ -44,12 +44,12 @@ function xoaSo($so, &$daySo){
  * @param int $n độ dài mảng
  */
 function quaySo(&$KetQua, $n){
-    $arr = array(0,0);
+    $arr = array();
     for($i = 0; $i<$n; $i++){
         do {
             $so = rand(1,80);
         }while (in_array($so, $arr));
-        $KetQua[$i] = $so;
+        $KetQua[] = $so;
         $arr[]=$so;
     }
 }
@@ -62,8 +62,6 @@ function quaySo(&$KetQua, $n){
  */
 function doSo($nguoiMuaChon, $KetQua){
     global $banQuyChieu;
-    print_r($nguoiMuaChon);
-    echo "<br>".count($nguoiMuaChon)."<br>";
     $soKetQuaTrung = 0;
     foreach($nguoiMuaChon as $chon){
         if(in_array($chon, $KetQua))

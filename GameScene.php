@@ -82,8 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-
 hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+if(count($_SESSION["soNguoiChon"])>0)
+  echo "<a href='./KetQua.php' style='font-size:20px; color:white;'>Dò số</a>";
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     // Biến lưu dải số người chơi chọn
