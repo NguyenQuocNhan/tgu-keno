@@ -29,7 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($_POST["so_$i"] != null)
             $nguoiMuaChon[] = $_POST["so_$i"];
     }
-    echo "<br>"."Số tiền bạn trúng là: ".kiemTraKetQua($nguoiMuaChon, $KetQua)*1000000;
+    $final = kiemTraKetQua($nguoiMuaChon, $KetQua);
+    if ($final > 0)
+        echo "<br>"."Số tiền bạn trúng là: ".$final*1000000;
+    else 
+        echo "<br>"."Chúc mừng bạn đã trúng... gió";
 }
 ?>
 
