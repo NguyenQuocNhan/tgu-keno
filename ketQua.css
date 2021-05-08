@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  background-image: url(https://thietbiketnoi.com/wp-content/uploads/2020/01/tong-hop-hinh-nen-background-vector-designer-dep-do-phan-giai-fhd-2k-4k-moi-nhat-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.content {
+  text-align: center;
+}
+
+.message {
+  padding: 0;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.result {
+  border: 10px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px;
+  width: max-content;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.result button {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 5px;
+  font-weight: 700;
+  box-shadow: 0 0 5px black;
+  outline: none;
+  border: none;
+}
+
+.hits {
+  border: 10px solid rgb(255, 255, 255);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px;
+  width: max-content;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgb(255, 0, 106);
+}
+
+.no-hit {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(64, 224, 208, 0);
+  margin: 5px;
+  font-weight: 600;
+  color: white;
+  background-image: linear-gradient(to bottom,rgb(255, 136, 0), rgb(255, 0, 85));
+  border-top: 3px solid rgb(255, 200, 137);
+  border-left: 3px solid rgb(255, 152, 35);
+  border-right: 3px solid rgb(236, 0, 79);
+  border-bottom: 3px solid rgb(214, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0 0 5px red;
+  box-shadow: 0 0 3px rgb(0, 0, 0);
+  font-size: large;
+}
+
+.hit {
+  font-size: large;
+  width: 50px;
+  height: 50px;
+  border-top: 3px solid rgb(255, 161, 98);
+  border-left: 3px solid rgb(255, 140, 63);
+  border-right: 3px solid rgb(209, 84, 0);
+  border-bottom: 3px solid rgb(201, 80, 0);
+  background: rgb(255, 196, 0);
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: 0 0 10px rgb(255, 0, 76);
+}
+
+.happy {
+  margin: auto;
+  width: max-content;
+  color: gray;
+  text-align: center;
+}
+
+.condolatory {
+  margin: auto;
+  width: max-content;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 10px 5px rgb(0, 0, 0);
+  background-image: linear-gradient(to right, rgb(255, 31, 31), rgb(69, 36, 255));
+  border-radius: 15px;
+  box-shadow: 0 10px 5px black;
+}
