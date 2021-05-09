@@ -33,17 +33,17 @@
   // Xuất form chọn số
   echo "<form action='./GameScene.php' method='post'>";
   echo "<div class='main'>";
-  echo "<table class='choice'>";
-  echo "
-    <tr style='background-image: linear-gradient(to right, red, blue); color:white;'>
-      <td style='border-bottom: 1px solid white; border-right: 2px solid white;'>HITS</td>
-      <td style='border-bottom: 1px solid white;'>PAYOUT</td>
-    </tr>";
+  // echo "<table class='choice'>";
+  // echo "
+  //   <tr style='background-image: linear-gradient(to right, red, blue); color:white;'>
+  //     <td style='border-bottom: 1px solid white; border-right: 2px solid white;'>HITS</td>
+  //     <td style='border-bottom: 1px solid white;'>PAYOUT</td>
+  //   </tr>";
 
-  //$listNumChoice = [0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 2500, 10000];
+  // //$listNumChoice = [0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 2500, 10000];
 
-  hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
-  echo "</table>";
+  // hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+  // echo "</table>";
 
   echo "<table class='inputNumber'>";
   for ($j = 0; $j < 8; $j++) {
@@ -76,27 +76,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+echo "<form method='post' action='./GameScene.php'>";
+  echo "<table class='choice'>";
+  echo "
+    <tr style='background-image: linear-gradient(to right, red, blue); color:white;'>
+      <td style='border-bottom: 1px solid white; border-right: 2px solid white;'>HITS</td>
+      <td style='border-bottom: 1px solid white;'>PAYOUT</td>
+    </tr>";
+
+  hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+  echo "</table>";
+echo "</form>";
+
+// show nút bấm dò số nếu đặt cược ít nhất 1 số
 if(count($_SESSION["soNguoiChon"])>0)
   echo "<a href='./KetQua.php' style='font-size:20px; color:white;'>Dò số</a>";
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     // Biến lưu dải số người chơi chọn
-//     $nguoiMuaChon = array();
-//     for ($i = 0;$i<10; $i++){
-//         if($_POST["so_$i"] != null)
-//             $nguoiMuaChon[] = $_POST["so_$i"];
-//     }
-//     $final = kiemTraKetQua($nguoiMuaChon, $KetQua);
-//     if ($final > 0)
-//         echo "<br>"."Số tiền bạn trúng là: ".$final*1000000;
-//     else 
-//         echo "<br>"."Chúc mừng bạn đã trúng... gió";
-// }
-
-
 ?>
-
-  ?>
 
 </body>

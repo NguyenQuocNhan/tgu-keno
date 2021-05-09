@@ -19,18 +19,21 @@ $banQuyChieu = array(
  * Hàm hiển thị dãy số vừa chọn
  */
 function hienThiDaySoVuaChon($daySo){
-    echo "<form action='./GameScene.php' method='post'>";
-    $index = 1;
-    foreach($daySo as $so){
-      echo "<tr>";
-      echo "<td class='hit'>".$index."</td>";
-      echo "<td class='payout'>
-        <button name='xoa' value='$so'>$so</button>
-      </td>";
-      echo "</tr>";
-      $index++;
+    // Nếu dãy số lớn hơn 0 hiển thị
+    if (count($daySo) > 0){
+        echo "<form action='./GameScene.php' method='post'>";
+        $index = 1;
+        foreach($daySo as $so){
+        echo "<tr>";
+        echo "<td class='hit'>".$index."</td>";
+        echo "<td class='payout'>
+            <button name='xoa' value='$so'>$so</button>
+        </td>";
+        echo "</tr>";
+        $index++;
+        }
+        echo "</form>";
     }
-    echo "</form>";
 }
 
 
