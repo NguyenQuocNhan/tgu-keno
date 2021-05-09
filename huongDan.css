@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {}
+
+header {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*box-shadow: 0 0 20px black;*/
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(to right, rgb(98, 0, 255), red, rgb(0, 0, 0));
+}
+
+header h1 {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.199), red, rgba(0, 0, 255, 0.425));
+}
+
+header p {
+  color: rgb(255, 251, 0);
+  text-shadow: 0 5px 5px black;
+}
+
+/*******/
+
+/*******/
+
+/*******/
+
+/*******/
+
+.top-content {
+  margin: 10px;
+  text-align: center;
+  background-image: url(https://lh3.googleusercontent.com/proxy/brljUoz5FXQhI66TFnlOzGhqyiEmpFIOAlV4g9ahIKd_vQzBvA2IumKL-_l-RIKW-fE-3X2r7K799BNlaBh9eKG9LbKd_mlb1p-uVouHA8yhhWyf3d0G71i3wR_bJzeozbxrMrWnIZfCAhkz9O6lp_8ndA);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  box-shadow: 0 0 4px black;
+}
+
+.logo-keno {
+  position: relative;
+  top: 50%;
+  width: 200px;
+  transform: translateY(-50%);
+  border-radius: 15px;
+}
+
+.connect-img {
+  position: absolute;
+  left: 40%;
+  top: 75%;
+  width: 270px;
+}
+
+.title {
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px black;
+  width: max-content;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgb(133, 133, 133);
+}
+
+.container {
+  margin: auto;
+  width: 60%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container img {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container .ul1 {
+  list-style-type: decimal;
+}
+
+.container .ul1 div {
+  padding: 30px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+  margin: 15px;
+}
+
+.container .ul1 li {}
+
+.container .ul2 {
+  list-style-type: lower-alpha;
+}
+
+.container .ul2 li {
+  border: none;
+}
+
+/********************************/
+
+/*******/
+
+/*******/
+
+/*******/
+
+/*******/
+
+footer {
+  background-image: linear-gradient(to right, black, rgb(255, 0, 0), rgb(255, 153, 0));
+}
+
+footer h1 {
+  text-align: center;
+}
+
+footer div {
+  margin-top: 10px;
+  height: 10px;
+  background-image:linear-gradient(to bottom, red, black);
+}
