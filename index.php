@@ -30,7 +30,7 @@ $_SESSION["soNguoiChon"] = array();
   </div>
 
   <form action="./GameScene.php" method="post">
-    <button type="submit">Play Game</button>
+    <button type="submit" class="playgame">Play Game</button>
   </form>
 
   <div class="container">

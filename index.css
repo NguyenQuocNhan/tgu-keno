@@ -28,12 +28,51 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.title-choice {
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.363), rgba(0, 0, 255, 0.349));
+  color: white;
+}
+
+.title-choice-first:nth-child(1) {
+  border-bottom: 1px solid white;
+  width: 100px;
+}
+
+.notChoice {
+  background-image: linear-gradient(to right, red, rgb(255, 0, 179), red);
+  margin-top: 15px;
+  padding: 5px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  /* box-shadow: 0 0 5px black; */
+}
+
+.title-choice-first:nth-child(2) {
+  border-bottom: 1px solid white;
+  width: 100px;
+}
+
+.box-choice {
+  margin-left: 10px;
+  border: 7px solid rgb(0, 140, 255);
+  box-shadow: 0 0 5px rgb(38, 0, 255);
+}
+
+.box-choice div:nth-child(2) {
+  /* box-shadow: 0 0 15px rgb(255, 255, 255); */
+  text-align: center;
+}
+
+.box-choice div:nth-child(2) {
+  /* box-shadow: 0 0 5px rgb(0, 4, 255); */
+}
+
 .choice {
-  margin-left: 20px;
+  margin: 10px;
   text-align: center;
   border: 5px solid rgb(0, 140, 255);
   box-shadow: 0 0 5px rgb(0, 4, 255);
-  background-image: linear-gradient(to right, rgba(255, 0, 106, 0.3), rgba(0, 0, 255, 0.3));
+  background-image: linear-gradient(to right, rgba(255, 0, 106, 0.089), rgba(0, 0, 255, 0.116));
 }
 
 .choice tr {}
@@ -48,7 +87,7 @@ body {
 }
 
 .choice .hit {
-  width: 80px;
+  width: 100px;
   color: white;
   border-right: 2px solid cyan;
 }
@@ -56,7 +95,7 @@ body {
 .choice .payout {
   position: relative;
   color: white;
-  width: 80px;
+  width: 100px;
   text-align: left;
   padding-left: 10px;
 }
@@ -68,9 +107,9 @@ body {
   padding: 0;
   margin: 0;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0);
+  background: rgb(0, 0, 0);
   border: 2px solid rgb(255, 255, 255);
-  box-shadow: 0 0 5px rgb(255, 255, 255);
+  box-shadow: 0 3px 5px rgb(0, 0, 0);
   outline: none;
   color: rgb(255, 255, 255);
   font-weight: 700;
@@ -116,21 +155,38 @@ body {
   color: white;
 }
 
-/*********//*********//*********//*********//*********//*********/
+.checkNumber {
+  text-align: center;
+}
 
-footer {
+.checkNumber * {
+  padding: 3px 50px 3px 50px;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.356), rgba(0, 0, 255, 0.315));
+  border-radius: 5px;
+  color: rgb(255, 209, 209);
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  text-shadow: 0 0 2px rgb(0, 0, 0);
+  box-shadow: 0 0 5px black;
+  outline: none;
+}
+
+.checkNumber *:hover {
+  box-shadow: 0 0 13px rgb(0, 255, 255);
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.664), rgba(0, 0, 255, 0.671), rgba(0,0,0,0.5));
+  transition: 0.5s;
+}
+
+/*********/
+
+/* footer {
   width: 100%;
   position: absolute;
   bottom: 0;
-  background-image: linear-gradient(to bottom, rgb(37, 0, 85), rgb(255, 0, 0), rgb(255, 153, 0));
+  background-image: linear-gradient(to bottom, rgb(111, 0, 255), rgb(212, 0, 255), rgb(255, 124, 189));
 }
 
 footer h1 {
   text-align: center;
-}
-
-footer div {
-  margin-top: 10px;
-  height: 10px;
-  background-image:linear-gradient(to bottom, red, black);
-}
+} */

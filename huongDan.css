@@ -31,7 +31,9 @@ header p {
 
 /*******/
 
-/*******/
+.playgame {
+  border: 5px solid black;
+}
 
 .top-content {
   margin: 10px;
@@ -125,5 +127,5 @@ footer h1 {
 footer div {
   margin-top: 10px;
   height: 10px;
-  background-image:linear-gradient(to bottom, red, black);
+  background-image: linear-gradient(to bottom, red, black);
 }
