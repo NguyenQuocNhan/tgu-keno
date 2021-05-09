@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Không thể chọn thêm nữa";
       break;
     } elseif (isset($_POST["so_$i"])) {
-      $_SESSION["soNguoiChon"][] = $_POST["so_$i"]; // Thêm số người chơi chọn vào session
+      themSo($_POST["so_$i"], $_SESSION["soNguoiChon"]); // Thêm số người chơi chọn vào session
     }
   }
 
