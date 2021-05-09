@@ -76,20 +76,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-  // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  //     // Biến lưu dải số người chơi chọn
-  //     $nguoiMuaChon = array();
-  //     for ($i = 0;$i<10; $i++){
-  //         if($_POST["so_$i"] != null)
-  //             $nguoiMuaChon[] = $_POST["so_$i"];
-  //     }
-  //     $final = kiemTraKetQua($nguoiMuaChon, $KetQua);
-  //     if ($final > 0)
-  //         echo "<br>"."Số tiền bạn trúng là: ".$final*1000000;
-  //     else 
-  //         echo "<br>"."Chúc mừng bạn đã trúng... gió";
-  // }
+hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+if(count($_SESSION["soNguoiChon"])>0)
+  echo "<a href='./KetQua.php' style='font-size:20px; color:white;'>Dò số</a>";
 
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // Biến lưu dải số người chơi chọn
+//     $nguoiMuaChon = array();
+//     for ($i = 0;$i<10; $i++){
+//         if($_POST["so_$i"] != null)
+//             $nguoiMuaChon[] = $_POST["so_$i"];
+//     }
+//     $final = kiemTraKetQua($nguoiMuaChon, $KetQua);
+//     if ($final > 0)
+//         echo "<br>"."Số tiền bạn trúng là: ".$final*1000000;
+//     else 
+//         echo "<br>"."Chúc mừng bạn đã trúng... gió";
+// }
+
+
+?>
 
   ?>
 

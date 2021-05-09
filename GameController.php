@@ -33,14 +33,26 @@ function hienThiDaySoVuaChon($daySo){
     echo "</form>";
 }
 
-/** 
+
+/**
+ * Hàm thêm số vào dãy số đặt cược
+ * @param int $so số cần đặt cược
+ * @param array &$daySo dãy số đặt cược
+ */
+function themSo($so, &$daySo){
+    if(!in_array($so, $daySo)){
+        $daySo[] = $so;
+    }
+}
+
+/**
  * Hàm xóa số khỏi dãy số
  * @param int $so cần xóa khỏi dãy số
  * @param array $daySo dãy số mà người chơi chọn
  */
 function xoaSo($so, &$daySo){
     $pos = array_search($so, $daySo); // tìm vị trí của số trong dãy số
-    if($pos){
+    if($pos > -1 && gettype($pos) != 'boolean'){
         unset($daySo[$pos]); // xóa số khỏi dãy số
     }
 }
@@ -51,12 +63,12 @@ function xoaSo($so, &$daySo){
  * @param int $n độ dài mảng
  */
 function quaySo(&$KetQua, $n){
-    $arr = array(0,0);
+    $arr = array();
     for($i = 0; $i<$n; $i++){
         do {
             $so = rand(1,80);
         }while (in_array($so, $arr));
-        $KetQua[$i] = $so;
+        $KetQua[] = $so;
         $arr[]=$so;
     }
 }
@@ -69,8 +81,6 @@ function quaySo(&$KetQua, $n){
  */
 function doSo($nguoiMuaChon, $KetQua){
     global $banQuyChieu;
-    print_r($nguoiMuaChon);
-    echo "<br>".count($nguoiMuaChon)."<br>";
     $soKetQuaTrung = 0;
     foreach($nguoiMuaChon as $chon){
         if(in_array($chon, $KetQua))
