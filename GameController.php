@@ -26,16 +26,13 @@ function hienThiDaySoVuaChon($daySo){
         foreach($daySo as $so){
         echo "<tr>";
         echo "<td class='hit'>".$index."</td>";
-        echo "<td class='payout'>
-            <button name='xoa' value='$so'>$so</button>
-        </td>";
+        echo "<td class='payout'>$so<button name='xoa' value='$so'>x</button></td>";
         echo "</tr>";
         $index++;
         }
         echo "</form>";
     }
 }
-
 
 /**
  * Hàm thêm số vào dãy số đặt cược
