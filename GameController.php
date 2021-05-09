@@ -18,10 +18,17 @@ $banQuyChieu = array(
 /**
  * Hàm hiển thị dãy số vừa chọn
  */
-function hienThiDaySoVuaChon(&$daySo){
+function hienThiDaySoVuaChon($daySo){
     echo "<form action='./GameScene.php' method='post'>";
-    foreach($daySo as &$so){
-        echo "<button style='background: white; color: black' name='xoa' value='$so'>$so</button>";
+    $index = 1;
+    foreach($daySo as $so){
+      echo "<tr>";
+      echo "<td class='hit'>".$index."</td>";
+      echo "<td class='payout'>
+        <button name='xoa' value='$so'>$so</button>
+      </td>";
+      echo "</tr>";
+      $index++;
     }
     echo "</form>";
 }

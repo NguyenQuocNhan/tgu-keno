@@ -12,62 +12,57 @@
 <body>
   <h1 class="title">KENO</h1>
 
-<?php
+  <?php
 
-session_start();
+  session_start();
 
-@include "./GameController.php";
-@include "./Test.php";
-
-
-// $KetQua = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-
-// quay_so($KetQua, 20);
-// //$KetQua = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+  @include "./GameController.php";
+  @include "./Test.php";
 
 
-// foreach($KetQua as $so){
-//     echo $so."&nbsp;";
-// }
+  // $KetQua = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 
-// Xuất form chọn số
-echo "<form action='./GameScene.php' method='post'>";
-echo "<div class='main'>";
-echo "<table class='choice'>";
-echo "
+  // quay_so($KetQua, 20);
+  // //$KetQua = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+
+
+  // foreach($KetQua as $so){
+  //     echo $so."&nbsp;";
+  // }
+
+  // Xuất form chọn số
+  echo "<form action='./GameScene.php' method='post'>";
+  echo "<div class='main'>";
+  echo "<table class='choice'>";
+  echo "
     <tr style='background-image: linear-gradient(to right, red, blue); color:white;'>
       <td style='border-bottom: 1px solid white; border-right: 2px solid white;'>HITS</td>
       <td style='border-bottom: 1px solid white;'>PAYOUT</td>
     </tr>";
 
-    $listNumChoice = [0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 2500, 10000];
-    for ($i = 0; $i < 15; $i++) {
-      echo "<tr>";
-      echo "<td class='hit'>" . ($i + 1) . "</td>";
-      echo "<td class='payout'>" . $listNumChoice[$i] . "</td>";
-      echo "</tr>";
-    }
-echo "</table>";
+  //$listNumChoice = [0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 2500, 10000];
 
-echo "<table class='inputNumber'>";
-    for ($j = 0; $j < 8; $j++) {
-      echo "<tr>";
-      for ($i = 0; $i < 10; $i++) {
-        $so = ($j * 10 + $i + 1);
-        echo "<td><button id='so_$so' name='so_$so' value='$so'>" . $so . "</button></td>";
-      }
-      echo "</tr>";
+  hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+  echo "</table>";
+
+  echo "<table class='inputNumber'>";
+  for ($j = 0; $j < 8; $j++) {
+    echo "<tr>";
+    for ($i = 0; $i < 10; $i++) {
+      $so = ($j * 10 + $i + 1);
+      echo "<td><button id='so_$so' name='so_$so' value='$so'>" . $so . "</button></td>";
     }
-echo "</table>
+    echo "</tr>";
+  }
+  echo "</table>
 </div>
 </form>";
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Nhận số vừa chọn và lưu vào $session
-  for($i = 1; $i <= 80; $i++){
-    if(count($_SESSION["soNguoiChon"]) >= 10){
+  for ($i = 1; $i <= 80; $i++) {
+    if (count($_SESSION["soNguoiChon"]) >= 10) {
       echo "Không thể chọn thêm nữa";
       break;
     }
@@ -77,12 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // xóa số được nhận
-  if(isset($_POST['xoa'])){
+  if (isset($_POST['xoa'])) {
     xoaSo($_POST['xoa'], $_SESSION['soNguoiChon']);
   }
 }
 
 hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
+
+// chọn hơn 1 số là hiện ra cái nút dò số
 if(count($_SESSION["soNguoiChon"])>0)
   echo "<a href='./KetQua.php' style='font-size:20px; color:white;'>Dò số</a>";
 
@@ -103,5 +100,6 @@ if(count($_SESSION["soNguoiChon"])>0)
 
 ?>
 
-</body>
+  ?>
 
+</body>
