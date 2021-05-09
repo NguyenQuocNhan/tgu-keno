@@ -16,12 +16,13 @@
 
   // init var to get infomation
   $ketQua = array();
-  $datCuoc = $_SESSION['soNguoiChon'];
+  $soDaChon = $_SESSION['soNguoiChon'];
+  $datCuoc = array();
 
   // setup random
   //for ($i = 0; $i < random_int(10, 20); $i++) array_push($ketQua, $i);
-  // for ($i = 0; $i < random_int(10, 20); $i++) array_push($datCuoc, random_int(1, 80));
-
+  for ($i = 0; $i < count($soDaChon); $i++) array_push($datCuoc, (int)$soDaChon[$i]);
+  echo $soDaChon[0];
   quaySo($ketQua, 20); // trả về mảng $ketQua dãy số ngẫu nhiên
 
   // show KetQua
@@ -45,11 +46,12 @@
   echo "</div>";
 
   echo "<div class='message'>";
-  $tienThang = doSo($datCuoc, $ketQua);
-  if ($tienThang > 0) {
-    echo "<h1 class='happy'>Xin chia buồn bạn đã trúng thưởng ".($tienThang*1000000)." <br> Bạn biến ngay đi</h1>";
-  } else echo "<h1 class='condolatory'>Chúc mừng bạn đã đặt cược trật lất</h1>";
-  echo "</div>";
+  
+  // $tienThang = doSo($datCuoc, $ketQua);
+  // if ($tienThang > 0) {
+  //   echo "<h1 class='happy'>Xin chia buồn bạn đã trúng thưởng ".($tienThang*1000000)." <br> Bạn biến ngay đi</h1>";
+  // } else echo "<h1 class='condolatory'>Chúc mừng bạn đã đặt cược trật lất</h1>";
+  // echo "</div>";
 
   function checkHit($datCuoc, $ketQua)
   {

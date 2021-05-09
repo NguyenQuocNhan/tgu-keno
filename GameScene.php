@@ -31,6 +31,7 @@
   // }
 
   // Xuất form chọn số
+  echo "<div class='container'>";
   echo "<form action='./GameScene.php' method='post'>";
   echo "<div class='main'>";
   // echo "<table class='choice'>";
@@ -58,40 +59,48 @@
 </div>
 </form>";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  // Nhận số vừa chọn và lưu vào $session
-  for ($i = 1; $i <= 80; $i++) {
-    if (count($_SESSION["soNguoiChon"]) >= 10) {
-      echo "Không thể chọn thêm nữa";
-      break;
-    } elseif (isset($_POST["so_$i"])) {
-      themSo($_POST["so_$i"], $_SESSION["soNguoiChon"]); // Thêm số người chơi chọn vào session
+    // Nhận số vừa chọn và lưu vào $session
+    for ($i = 1; $i <= 80; $i++) {
+      if (count($_SESSION["soNguoiChon"]) >= 10) {
+        echo "<div><p>Không thể chọn thêm nữa</p>";
+        break;
+      } elseif (isset($_POST["so_$i"])) {
+        themSo($_POST["so_$i"], $_SESSION["soNguoiChon"]); // Thêm số người chơi chọn vào session
+      }
+    }
+
+    // xóa số được nhận
+    if (isset($_POST['xoa'])) {
+      xoaSo($_POST['xoa'], $_SESSION['soNguoiChon']);
     }
   }
 
-  // xóa số được nhận
-  if (isset($_POST['xoa'])) {
-    xoaSo($_POST['xoa'], $_SESSION['soNguoiChon']);
-  }
-}
-
-echo "<form method='post' action='./GameScene.php'>";
+  echo "<form method='post' class='box-choice' action='./GameScene.php'>";
   echo "<table class='choice'>";
-  echo "
-    <tr style='background-image: linear-gradient(to right, red, blue); color:white;'>
-      <td style='border-bottom: 1px solid white; border-right: 2px solid white;'>HITS</td>
-      <td style='border-bottom: 1px solid white;'>PAYOUT</td>
+  echo "<tr style='background-image: linear-gradient(to right, red, blue); color:white;'>
+      <td style='border-bottom: 1px solid white;border-right: 2px solid white;width: 80px;'>INDEX</td>
+      <td style='border-bottom: 1px solid white;width:100px'>CHOICE</td>
     </tr>";
 
   hienThiDaySoVuaChon($_SESSION["soNguoiChon"]);
   echo "</table>";
-echo "</form>";
+  echo "</form>";
 
-// show nút bấm dò số nếu đặt cược ít nhất 1 số
-if(count($_SESSION["soNguoiChon"])>0)
-  echo "<a href='./KetQua.php' style='font-size:20px; color:white;'>Dò số</a>";
+  // show nút bấm dò số nếu đặt cược ít nhất 1 số
+  if (count($_SESSION["soNguoiChon"]) > 0)
+    echo "<a href='./KetQua.php' style='font-size:20px; color:white;'>Dò số</a>";
 
-?>
+  echo "</div>";
+
+  echo "</div>";
+  ?>
+
+<footer>
+    <h1>Hãy tưởng tượng đây là một chân trang</h1>
+    <h1>Như chân trời có bó nhang chờ bạn</h1>
+    <div></div>
+  </footer>
 
 </body>
