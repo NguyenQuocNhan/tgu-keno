@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +9,7 @@ session_start();
 $_SESSION["soNguoiChon"] = array();
 
 ?>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,11 +29,11 @@ $_SESSION["soNguoiChon"] = array();
     <img class="logo-keno" src="https://cms.xosothienphu.com/uploaded/Images/Original/2021/04/22/keno-la-gi_2204154413.jpg" alt="">
   </div>
 
-  <form action="./GameScene.php" method="post">
-    <button type="submit" class="playgame">Play Game</button>
-  </form>
-
   <div class="container">
+    <form class="form-play" action="./GameScene.php" method="post">
+      <button type="submit" class="playgame">Play Game</button>
+    </form>
+
     <h1 class="title">CƠ CẤU GIẢI THƯỞNG</h1>
     <ul class="ul1">
       <div>
