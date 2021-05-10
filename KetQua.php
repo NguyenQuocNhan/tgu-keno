@@ -21,8 +21,11 @@
 
   // setup random
   //for ($i = 0; $i < random_int(10, 20); $i++) array_push($ketQua, $i);
-  for ($i = 0; $i < count($soDaChon); $i++) if ($soDaChon[$i]) array_push($datCuoc, (int)$soDaChon[$i]);
-  echo $soDaChon[0];
+  foreach($soDaChon as $daChon){
+    $datCuoc[] = (int)$daChon;
+  }
+  //for ($i = 0; $i < count($soDaChon); $i++) if ($soDaChon[$i]) array_push($datCuoc, (int)$soDaChon[$i]);
+  //echo $soDaChon[0];
   quaySo($ketQua, 20); // trả về mảng $ketQua dãy số ngẫu nhiên
 
   // show KetQua

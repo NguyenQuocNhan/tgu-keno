@@ -59,10 +59,6 @@
 </div>
 </form>";
 
-
-
-
-
   echo "<div class='box-choice'>";
 
   // dòng này thiết kế để dễ cho việc thiết kế canh chỉnh
