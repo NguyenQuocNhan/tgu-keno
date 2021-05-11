@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="ketQua.css">
+  <style>
+      
+  </style>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
 
   // setup random
   //for ($i = 0; $i < random_int(10, 20); $i++) array_push($ketQua, $i);
-  foreach($soDaChon as $daChon){
+  foreach ($soDaChon as $daChon) {
     $datCuoc[] = (int)$daChon;
   }
   //for ($i = 0; $i < count($soDaChon); $i++) if ($soDaChon[$i]) array_push($datCuoc, (int)$soDaChon[$i]);
@@ -49,10 +52,10 @@
   echo "</div>";
 
   echo "<div class='message'>";
-  
+
   $tienThang = doSo($datCuoc, $ketQua);
   if ($tienThang > 0) {
-    echo "<h1 class='happy'>Xin chia buồn bạn đã trúng thưởng ".($tienThang*1000000)." <br> Bạn biến ngay đi</h1>";
+    echo "<h1 class='happy'>Xin chia buồn bạn đã trúng thưởng " . ($tienThang * 1000000) . " <br> Bạn biến ngay đi</h1>";
   } else echo "<h1 class='condolatory'>Chúc mừng bạn đã đặt cược trật lất</h1>";
   echo "</div>";
 
@@ -63,9 +66,12 @@
     }
     return false;
   }
-  ?>
 
-  <a href="./index.php" style="color:white; size:20px">Chơi lại</a>
+  echo "<div class='box-playAgain'>
+    <a class='playAgain' href='./index.php'>Chơi lại</a>
+  </div>";
+
+  ?>
 </body>
 
 </html>
